@@ -5,7 +5,11 @@ const cors = require("cors");
 const app = express();
 const mysql = require("mysql2");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://standings-decorde.netlify.app/", // Replace with your actual frontend URL
+  })
+);
 app.use(express.json());
 
 const PORT = process.env.DB_PORT || 3000;
